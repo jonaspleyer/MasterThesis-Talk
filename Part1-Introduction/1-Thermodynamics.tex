@@ -1,0 +1,97 @@
+\section{Thermodynamics - Calculating an EoS}
+
+\subsection{Short Summary of main Principles}
+\begin{frame}
+	\frametitle{\insertsubsection}
+	\begin{itemize}%[<+->]
+		\item Statistical theory of manyparticle systems
+		\item Describe macroscopic Phenomena by microscopic principles
+		\item Partition function contains all information about $N$ particles with position $x_i\in M$ and momentum $p_i\in T_{x_i}M$ with $V=\text{vol}(M)$
+		\begin{equation}
+			\mathcal{Z}(T,V,N) = \int\limits_{TM^N}\exp\left(-\frac{H(x_1,\dots,p_N)}{k_BT}\right)\frac{dx_1\dots dp_N}{N!h^{3N}}
+		\end{equation}
+		\item Calculate equation of state via internal Energy $\mathcal{U}$ and
+		\begin{equation}
+			p = k_BT\frac{1}{\mathcal{Z}}\frac{\partial\mathcal{Z}}{\partial V} \hspace{1cm} \rho = \frac{\mathcal{U}}{V} = \frac{k_BT^2}{V}\frac{\partial\mathcal{Z}}{\partial T}
+			\label{1-Thermo-Pres-Dens}
+		\end{equation}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}%[<+->]
+		\item Partition Function ($K_2$ is modified Bessel function of 2nd kind)
+		\begin{equation}
+			\mathcal{Z} = \frac{1}{N!}\left(8\pi V\left(\frac{k_BT}{hc}\right)^32\alpha K_2(\alpha)\right)^N
+			\label{1-Thermo-Part-Func-Final}
+		\end{equation}
+		\item With equations \ref{1-Thermo-Pres-Dens} and \ref{1-Thermo-Part-Func-Final} obtain
+		\begin{equation}
+			p = \frac{Nk_BT}{V} = CNmc^2\frac{1}{K_2(\alpha)\alpha^2}\exp\left(-\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right)
+			\label{1-Thermo-Pres-Alpha-Rel}
+		\end{equation}
+		\begin{theorem}
+			The function $p(\alpha)$ above is a bijection.
+		\end{theorem}
+		\item Sketch of proof: take differential, use properties/representations of $K_\nu$
+		\item Use inverse and previous equations \ref{1-Thermo-Pres-Dens}, \ref{1-Thermo-Part-Func-Final} and \ref{1-Thermo-Pres-Alpha-Rel} to obtain EOS
+		\begin{equation}
+			\rho = \frac{\U}{V} = p\left(1+\alpha(p)\frac{K_1(\alpha(p))+K_3(\alpha(p))}{2K_2(\alpha(p))}\right)
+		\end{equation}
+	\end{itemize}
+\end{frame}
+
+
+% \subsection{Non- and Ultra-Relativistic Case}
+% \begin{frame}
+% 	1 Frame\\
+% 	Calculate the EoS for both cases
+% \end{frame}
+
+% \subsection{Fully Special Relativistic EoS}
+% \begin{frame}
+% 	\frametitle{\insertsubsection}
+% 	\begin{itemize}%[<+->]
+% 		\item Fully special relativistic Hamiltonian (single particle)
+% 		\begin{equation}
+% 			H = mc^2\sqrt{1+\frac{p^2}{m^2c^2}}
+% 		\end{equation}
+% 		\item Hamiltonian is independent of space-coordinate
+% 		\item Plug into partition function (spherical coordinates)
+% 		\begin{equation}
+% 			\mathcal{Z} = \frac{V^N}{N!h^{3N}}\left[\int4\pi p^2\exp\left(-\frac{mc^2}{k_BT}\sqrt{1+\frac{p^2}{m^2c^2}}\right)dp\right]^N
+% 		\end{equation}
+% 		\item Lots of calculation later ...
+% 		\begin{equation}
+% 			\mathcal{Z} = \frac{1}{N!}\left(8\pi V\left(\frac{k_BT}{hc}\right)^32\alpha K_2(\alpha)\right)^N
+% 		\end{equation}
+% 		with $\alpha=mc^2/k_BT$ and $K_2$ modified Bessel function of the second kind
+% 	\end{itemize}
+% \end{frame}
+% 
+% 
+% \begin{frame}
+% 	\begin{itemize}%[<+->]
+% 		\item Internal Energy
+% 		\begin{equation}
+% 			\mathcal{U} = 3Nk_BT-Nk_BT\left(\alpha\frac{\partial K_2(\alpha)}{K_2(\alpha)} + 2\right)
+% 		\end{equation}
+% 		\item Ultra relativistic limit is obtained when $m\rightarrow0$ or $\alpha\rightarrow0$
+% 		\begin{equation}
+% 			\mathcal{U}_{UR} = 3Nk_BT \hspace{1cm} \mathcal{Z}_{UR} = \frac{1}{N!}\left(8\pi\left(\frac{k_BT}{hc}\right)^3\right)
+% 		\end{equation}
+% 		\item Additionally assume adiabatic condition $\delta Q=0\Rightarrow\delta W=-pdV=dU$. This gives us
+% 		\begin{align}
+% 			-pdV &= C_VdT\\
+% 			-\frac{Nk_BT}{V}dV &= N_kB\left[1+\alpha^2\left(\left(\frac{\partial_\alpha K_2(\alpha)}{K_2(\alpha)}\right)^2-\frac{\partial^2K_2(\alpha)}{K_2(\alpha)}\right)\right]dT
+% 		\end{align}
+% 	\end{itemize}
+% \end{frame}
+% 
+% 
+% \begin{frame}
+% 	\begin{itemize}%[<+->]
+% 		\item 
+% 	\end{itemize}
+% \end{frame}
+% 

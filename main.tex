@@ -1,0 +1,125 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\usepackage {amssymb}
+\usepackage [english]{babel}
+\usepackage [sorting=none, style=alphabetic, citestyle=alphabetic, url=false, backend=biber]
+			{biblatex}
+\usepackage {booktabs}
+\usepackage [skip=0pt]{caption}
+\usepackage {csquotes}
+\usepackage [T1]{fontenc}
+\usepackage {graphicx}
+\usepackage {hyperref}
+\usepackage {import}
+\usepackage [utf8]{inputenc}
+\usepackage {lmodern}
+\usepackage {mathtools}
+\usepackage [protrusion=true,expansion=true,kerning]{microtype}
+\usepackage {nameref}
+\usepackage {pgf}
+\usepackage {tikz}
+\usepackage {xcolor}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{dateplot}
+
+\usetheme{CambridgeUS}
+
+\usecolortheme{dolphin}
+
+% Declare this - symbol to import pgf files correctly
+\DeclareUnicodeCharacter{2212}{-}
+
+% Specify TopRule and Bottomrule Thickness for booktabs usepackage
+\renewcommand{\heavyrulewidth}{2pt}
+
+\definecolor{Uni-Fr-Red}{HTML}{C41330}
+\definecolor{Uni-Fr-Dark-Blue}{HTML}{00376d}
+\definecolor{Uni-Fr-Mid-Blue}{HTML}{004799}
+\definecolor{Uni-Fr-Light-Blue}{HTML}{5480c1}
+
+\setbeamercolor{normal text}{fg=black,bg=Uni-Fr-Light-Blue!30}
+\setbeamercolor{alerted text}{fg=black}
+\setbeamercolor{example text}{fg=black}
+
+\setbeamercolor{background canvas}{fg=Uni-Fr-Light-Blue, bg=white}
+
+\setbeamercolor{palette primary}{fg=white, bg=Uni-Fr-Light-Blue}
+\setbeamercolor{palette secondary}{fg=white, bg=Uni-Fr-Mid-Blue}
+\setbeamercolor{palette tertiary}{fg=white, bg=Uni-Fr-Dark-Blue}
+
+\title[Bad Title]{Do not choose a bad title}
+\subtitle{... at least not too bad.}
+
+% For short you could for example use the last name only, it's optional as is
+% the short title
+\author[Jonas Pleyer]{Jonas Pleyer}
+
+% Can be set, for students usually not required
+%\institute{}
+
+\date{\today}
+
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+% removes the navigation symbols
+% often they don't work and I find them rather annoying
+\beamertemplatenavigationsymbolsempty{}
+
+% Add the bibliography for the project
+\addbibresource{98-literature.bib}
+
+% Add Large and small letters to be breakable in urls and DOIs in biblatex
+\setcounter{biburllcpenalty}{9999}% Kleinbuchstaben
+\setcounter{biburlucpenalty}{9999}% Großbuchstaben
+
+% Sets linebreaking in names - Higher value = Dislikes such breaks
+\setcounter{highnamepenalty}{9999}
+\setcounter{lownamepenalty}{9999}
+
+% Symbols for Number sets and other stuff
+\newcommand{\Z}{\mathcal{Z}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Ent}{\mathcal{S}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\e}{\mathit{e}}
+\newcommand{\RP}{\mathbb{R}\text{P}}
+
+% Define new command for nice underbraces
+\newcommand\ubf{\kern-2\tabcolsep\upbracefill\kern-2\tabcolsep}
+
+% If you want that at the beginning of each section the table of contents
+% is shown, I don't like it for short presentations
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection, hideothersubsections]
+  \end{frame}
+}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+	\tableofcontents[hideallsubsections,subsubsectionstyle=hide]
+\end{frame}
+
+\input{Part1-Introduction/0-GR-And-Concepts}
+\input{Part1-Introduction/1-Thermodynamics}
+\input{Part2-Main/10-Numerical-Solutions}
+\input{Part2-Main/11-Exact-Results}
+\input{Part3-Outlook/20-Outlook}
+\input{Part3-Outlook/21-Sources}
+
+\end{document}

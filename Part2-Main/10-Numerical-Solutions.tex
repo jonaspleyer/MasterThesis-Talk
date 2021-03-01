@@ -1,0 +1,108 @@
+\section{Numerical Solutions}
+
+\subsection{Comparison of TOV and LE results}
+
+\begin{frame}
+	\frametitle{\insertsubsection}
+	\begin{table}[H]
+		\renewcommand{\arraystretch}{1.2}
+		\centering
+		\begin{tabular}{@{}llcll@{}}
+			\toprule
+			\multicolumn{2}{c}{\textbf{TOV}} & \phantom{b} &\multicolumn{2}{c}{\textbf{LE}}\\
+			\cmidrule{1-2} \cmidrule{4-5}
+			EOS & $\rho=Ap^{1/\gamma}$ && EOS & $p=K\rho^{\gamma}$\\
+			$A$ & $2$ & & \\
+			$\gamma=1+\frac{1}{n}$ & $4/3$ && $n=1/(\gamma-1)$ & $3$\\
+			$p_0$ & $0.5$ && $\theta_0$ & $1$\\
+			$m_0$ & $0$ && $d\theta_0$ & $0$\\
+			$dr$ & $0.01$ && $d\xi=dr/\alpha$ & $\frac{0.01}{0.3355}\approx0.0298$\\
+			\cmidrule{1-2} \cmidrule{4-5}
+			$\rho_0=Ap_0^{1/\gamma}$ & $2(2)^{\frac{4}{3}}\approx1.1892$ && $\lambda=\rho_0$ & $2(2)^{\frac{4}{3}}\approx1.1892$\\
+			&&& $K=A^{-1/\gamma}$ & $2^{-3/4}\approx0.5946$\\
+			&&& $\alpha^2=\frac{(n+1)K\lambda^{1/n-1}}{4\pi}$ & $\approx0.1125$\\
+			\bottomrule
+		\end{tabular}
+	\end{table}%
+\end{frame}
+
+
+
+\begin{frame}
+	\begin{figure}
+		\centering
+		\scalebox{0.6}{\import{Part2-Main/Pictures/}{TOV-LE-Combi.pgf}}
+	\end{figure}
+\end{frame}
+
+\subsection{Verifying Results}
+\begin{frame}
+	\frametitle{\insertsubsection}
+	\begin{figure}
+		\centering
+		\scalebox{0.6}{\import{Part2-Main/Pictures/}{LE-ValidateSols.pgf}}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Comparing Partial TOV and LE results}
+	\begin{itemize}
+		\item Next, reduce terms present in TOV equation
+		\begin{equation}
+			\frac{\partial p}{\partial r} = -\underbrace{\underbrace{\underbrace{\underbrace{\frac{Gm\rho}{r^2}}_{i=0}\hspace{0.1cm}\left(1+\frac{p}{\rho c^2}\right)}_{i=1}\hspace{0.1cm}\left(\frac{4\pi r^3p}{mc^2}+1\right)}_{i=2}\hspace{0.1cm}\left(1-\frac{2Gm}{rc^2}\right)^{-1}}_{i=3}
+		\end{equation}
+		\item We expect $i=0$ to be the LE equation as derived earlier
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\begin{figure}
+		\centering
+		\scalebox{0.6}{\import{Part2-Main/Pictures/}{TOV-Terms.pgf}}
+	\end{figure}
+\end{frame}
+
+
+\subsection{Zero Values of TOV and LE equation}
+\begin{frame}
+	\frametitle{\insertsubsection}
+% 	Show all the nice plots with the $n$ vs $\xi_0$ for different parameters plotted
+	\begin{figure}
+		\centering
+		\scalebox{0.65}{\import{Part2-Main/Pictures/}{TOV-Exponents-LESubs-InitialVals-Database-PlotResults.pgf}}
+		\caption{TOV and LE results for varying $A$ parameter of $\rho=Ap^{n/(n+1)}$}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}
+		\centering
+		\scalebox{0.65}{\import{Part2-Main/Pictures/}{TOV-Exponents-LESubs-InitialVals-Database-PlotResults-1.pgf}}
+		\caption{TOV and LE solutions for varying parameter $p_0$.}
+	\end{figure}
+	Intersection: $r=\beta\xi$ with $4\pi\beta A^{n/(n+1)}=(n+1)\lambda^{1-1/n}$ is independent of $\lambda=\rho(p_0)$.
+\end{frame}
+
+\subsection{Hypothesis}
+\begin{frame}
+	\frametitle{\insertsubsection}
+	\begin{theorem}
+		To each combination $p_0,A>0$ there exists a $n_0\geq0$ such that each solution of the TOV differential equation
+		\begin{alignat*}{3}
+			\frac{\partial m}{\partial r} &= &&4\pi\rho r^2\\
+			\frac{\partial p}{\partial r} &= -&&\frac{m\rho}{r^2}\left(1+\frac{p}{\rho}\right)\left(\frac{4\pi r^3p}{m}+1\right)\left(1-\frac{2m}{r}\right)^{-1}
+		\end{alignat*}
+		with $\rho=Ap^{\frac{n}{n+1}}$ where $n\leq n_0$ has $p(\xi_0)=0$ for some $\xi_0\in\R_{>0}$.
+	\end{theorem}
+\end{frame}
+
+
+% \subsection{Summary of Numerical Results}
+% \begin{frame}
+% 	\frametitle{\insertsubsection}
+% 	\begin{itemize}
+% 		\item Numerical and Exact results agree well where exact solutions are known
+% 		
+% 	\end{itemize}
+% \end{frame}

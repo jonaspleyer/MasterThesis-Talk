@@ -1,0 +1,75 @@
+\section{Exact Results}
+
+% \subsection{Existance LE}
+% \begin{frame}
+% 	1 Frame\\
+% 	Use Paper to show existance
+% \end{frame}
+
+\subsection{New Exact Solution for n=2}
+\begin{frame}
+	\frametitle{\insertsubsection}
+	\begin{itemize}%[<+->]
+		\item Found new solution for $n=2$ by using simple power-series $\theta=\sum a_m\xi^m$
+		\begin{equation}
+			\frac{1}{\xi^2}\frac{\partial}{\partial\xi}\left(\xi^2\frac{\partial\theta}{\partial\xi}\right) +\theta^2 =0
+		\end{equation}
+		\item Apply Cauchy-Product formula and combine
+		\begin{equation}
+			(m+1)\sum\limits_{m=0}^\infty\left((m+2)a_{m+2}\xi^{m}+2a_{m+1}\xi^{m-1} + \sum\limits_{k=0}^m a_{m-k}a_k\xi^m\right) = 0
+		\end{equation}
+		\begin{theorem}
+			The odd coefficients $a_{2m+1}$ vanish.
+		\end{theorem}
+		\item Proof by induction. Start at $\left.\partial\theta\right|_{\xi=0}=a_1=0$ is clear.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\begin{itemize}%[<+->]
+		\item Obtain recursive Formula for coefficients
+		\begin{equation}
+			a_{2m+2}=b_{m+1}= -\frac{1}{(m+2)(m+3)}\sum\limits_{k=0}^mb_{m-k}b_k
+		\end{equation}
+		\begin{theorem}
+			The series $\theta=\sum\limits_{m=0}^\infty b_{m}\xi^{2m}$ converges for $\xi<1$. % TODO was heißt absolute Konvergenz auf Englisch?
+		\end{theorem}
+		\begin{proof}
+			We know that $a_0=1$. Use L'Hospital's rule for $\xi\rightarrow0$
+			\begin{equation}
+				0=\frac{2}{\xi}\frac{\partial\theta}{\partial\xi} + \frac{\partial^2\theta}{\partial\xi^2}+\theta^2\longrightarrow3\left.\frac{\partial^2\theta}{\partial\xi^2}\right|_{\xi=0}+\left.\theta\right|_{\xi=0}=0
+			\end{equation}
+			Thus $a_2=\theta_0/6$. By induction, we get $|a_{m+2}|\leq\frac{m\theta_0^2}{(m+2)(m+3)}$. Now use quotient criterion.
+			% TODO find correct naming for Quotientenkriterium
+		\end{proof}
+	\end{itemize}
+\end{frame}
+
+\subsection{Hypothesis}
+\begin{frame}
+	\begin{figure}
+		\scalebox{0.65}{\import{Part2-Main/Pictures/}{LE-ExactN2.pgf}}
+		\caption{Exact solution $\theta$ and $(b_m)^{-1/(2m+2)}$ against $m$}
+	\end{figure}
+	\begin{itemize}%[<+->]
+		\begin{theorem}
+			The radius of convergence $R$ of the above calculated series is exactly the value at which $\theta(R)=0$.
+		\end{theorem}
+		\item Numerical problems: Calculation not very optimized, reaches floating point limit
+	\end{itemize}
+\end{frame}
+
+
+
+\subsection{Limiting Case TOV}
+\begin{frame}
+% 	1 Frame\\
+% 	Use Assumption that there exists a cont. solution of the TOV equation
+	\frametitle{\insertsubsection}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{frame}
+
+% \subsection{}
