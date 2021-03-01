@@ -40,7 +40,7 @@
 			\begin{equation}
 				0=\frac{2}{\xi}\frac{\partial\theta}{\partial\xi} + \frac{\partial^2\theta}{\partial\xi^2}+\theta^2\longrightarrow3\left.\frac{\partial^2\theta}{\partial\xi^2}\right|_{\xi=0}+\left.\theta\right|_{\xi=0}=0
 			\end{equation}
-			Thus $a_2=\theta_0/6$. By induction, we get $|a_{m+2}|\leq\frac{m\theta_0^2}{(m+2)(m+3)}$. Now use quotient criterion.
+			Thus $b_1=\theta_0/6$. By induction, we get $|b_{m+1}|\leq\frac{m\theta_0^2}{(m+2)(m+3)}$. Now use quotient criterion.
 			% TODO find correct naming for Quotientenkriterium
 		\end{proof}
 	\end{itemize}
@@ -48,6 +48,7 @@
 
 \subsection{Hypothesis}
 \begin{frame}
+	\frametitle{\insertsubsection}
 	\begin{figure}
 		\scalebox{0.65}{\import{Part2-Main/Pictures/}{LE-ExactN2.pgf}}
 		\caption{Exact solution $\theta$ and $(b_m)^{-1/(2m+2)}$ against $m$}
@@ -56,20 +57,47 @@
 		\begin{theorem}
 			The radius of convergence $R$ of the above calculated series is exactly the value at which $\theta(R)=0$.
 		\end{theorem}
-		\item Numerical problems: Calculation not very optimized, reaches floating point limit
+		\item Numerics: Calculation not optimized, reaches floating point limit
 	\end{itemize}
 \end{frame}
-
 
 
 \subsection{Limiting Case TOV}
-\begin{frame}
+\begin{frame}[allowframebreaks]
 % 	1 Frame\\
 % 	Use Assumption that there exists a cont. solution of the TOV equation
 	\frametitle{\insertsubsection}
-	\begin{itemize}
-		\item 
+	\begin{itemize}%[<+->]
+		\item Suppose the TOV equation has a solution that continuously depends on its parameters for $r\in[0,l)$ where $l$ may be $\infty$.
+		\begin{theorem}
+			Let $p_A$ be a solution of the TOV equation with $\rho=Ap^{1/\gamma}$. Then 
+			\begin{equation}
+				\lim_{A\rightarrow0}p_A=\frac{p_0}{2\pi p_0r^2+1}
+			\end{equation}
+		\end{theorem}
+		\begin{proof}
+			With $\partial m/\partial r = 4\pi Ap^{1/\gamma}r^2$, define $v:=m/A$
+			\begin{equation}
+				\frac{\partial p}{\partial r} = -\frac{p^{1/\gamma}}{r^2}\left(A+p^{1-1/\gamma}\right)\left(4\pi r^3p+vA\right)\left(1-\frac{2vA}{r}\right)^{-1}
+			\end{equation}
+		\end{proof}
 	\end{itemize}
 \end{frame}
+
+\begin{frame}
+	\begin{itemize}%[<+->]
+		\begin{proof}
+			Then for $A=0$, we have
+			\begin{equation}
+				\frac{\partial p}{\partial r} = -4\pi rp^2
+			\end{equation}
+			The solution to this differential equation is $p=\frac{p_0}{2\pi p_0r^2+1}$.
+		\end{proof}
+		\item Problem: Assumption needs that TOV equation is solvable
+		\item No experience with 2D singular ODEs.
+		\item Easy transformation tricks for 1D singular ODEs not working.
+	\end{itemize}
+\end{frame}
+
 
 % \subsection{}
