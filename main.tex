@@ -2,11 +2,12 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage {amssymb}
+\usepackage {amsthm}
 \usepackage [english]{babel}
 \usepackage [sorting=none, style=alphabetic, citestyle=alphabetic, url=false, backend=biber]
 			{biblatex}
 \usepackage {booktabs}
-\usepackage [skip=0pt]{caption}
+\usepackage [skip=0pt, belowskip=0pt]{caption}
 \usepackage {csquotes}
 \usepackage [T1]{fontenc}
 \usepackage {graphicx}
@@ -21,11 +22,13 @@
 \usepackage {tikz}
 \usepackage {xcolor}
 
+% pgfplots and settings
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{groupplots}
 \usepgfplotslibrary{dateplot}
 
+% Theme of the presentation
 \usetheme{CambridgeUS}
 
 \usecolortheme{dolphin}
@@ -36,23 +39,23 @@
 % Specify TopRule and Bottomrule Thickness for booktabs usepackage
 \renewcommand{\heavyrulewidth}{2pt}
 
+% Define colors of the university Freiburg hy their html value
 \definecolor{Uni-Fr-Red}{HTML}{C41330}
 \definecolor{Uni-Fr-Dark-Blue}{HTML}{00376d}
 \definecolor{Uni-Fr-Mid-Blue}{HTML}{004799}
 \definecolor{Uni-Fr-Light-Blue}{HTML}{5480c1}
-
+% Apply those colors to the presentation
 \setbeamercolor{normal text}{fg=black,bg=Uni-Fr-Light-Blue!30}
 \setbeamercolor{alerted text}{fg=black}
 \setbeamercolor{example text}{fg=black}
-
 \setbeamercolor{background canvas}{fg=Uni-Fr-Light-Blue, bg=white}
-
 \setbeamercolor{palette primary}{fg=white, bg=Uni-Fr-Light-Blue}
 \setbeamercolor{palette secondary}{fg=white, bg=Uni-Fr-Mid-Blue}
 \setbeamercolor{palette tertiary}{fg=white, bg=Uni-Fr-Dark-Blue}
 
-\title[Bad Title]{Do not choose a bad title}
-\subtitle{... at least not too bad.}
+% choose a very! good title
+\title[Star Masses and TOV Equation]{The Mass of Stars and the TOV Equation}
+% \subtitle{... at least not too bad.}
 
 % For short you could for example use the last name only, it's optional as is
 % the short title
@@ -66,8 +69,7 @@
 \setbeamertemplate{section in toc}[sections numbered]
 \setbeamertemplate{subsection in toc}[subsections numbered]
 
-% removes the navigation symbols
-% often they don't work and I find them rather annoying
+% Removes the navigation symbols
 \beamertemplatenavigationsymbolsempty{}
 
 % Add the bibliography for the project
@@ -89,9 +91,6 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\e}{\mathit{e}}
 \newcommand{\RP}{\mathbb{R}\text{P}}
-
-% Define new command for nice underbraces
-\newcommand\ubf{\kern-2\tabcolsep\upbracefill\kern-2\tabcolsep}
 
 % If you want that at the beginning of each section the table of contents
 % is shown, I don't like it for short presentations
