@@ -20,11 +20,13 @@
 
 \begin{frame}
 	\begin{itemize}[<+->]
-		\item Partition Function ($K_2$ is modified Bessel function of 2nd kind)
+		\item Partition Function for $H=\sqrt{m^2+p^2}$
 		\begin{equation}
-			\mathcal{Z} = \frac{1}{N!}\left(8\pi V\left(\frac{k_BT}{hc}\right)^32\alpha K_2(\alpha)\right)^N
+			\mathcal{Z} = \frac{1}{N!}\left(8\pi V\left(\frac{k_BT}{hc}\right)^3\frac{\alpha^2 K_2(\alpha)}{2}\right)^N
 			\label{1-Thermo-Part-Func-Final}
 		\end{equation}
+		\item $K_2$ is modified Bessel function of 2nd kind
+		\item Substitution $\alpha=mc^2/k_BT$
 		\item With equations \ref{1-Thermo-Pres-Dens} and \ref{1-Thermo-Part-Func-Final} obtain
 		\begin{equation}
 			p = \frac{Nk_BT}{V} = CNmc^2\frac{1}{K_2(\alpha)\alpha^2}\exp\left(-\alpha\frac{K_1(\alpha)+K_3(\alpha)}{2K_2(\alpha)}\right)
