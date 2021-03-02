@@ -6,7 +6,7 @@
 % 	Use Paper to show existance
 % \end{frame}
 
-\subsection{New Exact Solution for n=2}
+\subsection{New Exact Solution for LE at n=2}
 \begin{frame}
 	\frametitle{\insertsubsection}
 	\begin{itemize}[<+->]
@@ -40,7 +40,7 @@
 			\begin{equation}
 				0=\frac{2}{\xi}\frac{\partial\theta}{\partial\xi} + \frac{\partial^2\theta}{\partial\xi^2}+\theta^2\longrightarrow3\left.\frac{\partial^2\theta}{\partial\xi^2}\right|_{\xi=0}+\left.\theta\right|_{\xi=0}=0
 			\end{equation}
-			Thus $b_1=\theta_0/6$. By induction, we get $|b_{m+1}|\leq\frac{m\theta_0^2}{(m+2)(m+3)}$. Now use quotient criterion.
+			Thus $b_1=\theta_0/6$. By induction, we get $|b_{m+1}|\leq\frac{m\theta_0^2}{(m+2)(m+3)}$. Now use ratio test (``Quotientenkriterium'')
 			% TODO find correct naming for Quotientenkriterium
 		\end{proof}
 	\end{itemize}
@@ -53,7 +53,7 @@
 		\scalebox{0.65}{\import{Part1-Main/Pictures/}{LE-ExactN2.pgf}}
 		\caption{Exact solution $\theta$ and $(b_m)^{-1/(2m+2)}$ against $m$}
 	\end{figure}
-	\begin{itemize}%[<+->]
+	\begin{itemize}[<+->]
 		\begin{hypothesis}
 			The radius of convergence $R$ of the above calculated series is exactly the value at which $\theta(R)=0$.
 		\end{hypothesis}
@@ -63,7 +63,7 @@
 
 
 \subsection{Limiting Case TOV}
-\begin{frame}[allowframebreaks]
+\begin{frame}
 % 	1 Frame\\
 % 	Use Assumption that there exists a cont. solution of the TOV equation
 	\frametitle{\insertsubsection}
@@ -86,15 +86,15 @@
 
 \begin{frame}
 	\begin{itemize}[<+->]
-		\begin{proof}
+		\begin{proofcont}
 			Then for $A=0$, we have
 			\begin{equation}
 				\frac{\partial p}{\partial r} = -4\pi rp^2
 			\end{equation}
 			The solution to this differential equation is $p=\frac{p_0}{2\pi p_0r^2+1}$.
-		\end{proof}
-		\item Problem: Assumption needs that TOV equation is solvable
-		\item No experience with 2D singular ODEs.
+		\end{proofcont}
+		\item Problem: Assumption is that TOV equation is solvable
+% 		\item No experience with 2D singular ODEs.
 		\item Easy transformation tricks for 1D singular ODEs not working.
 	\end{itemize}
 \end{frame}
