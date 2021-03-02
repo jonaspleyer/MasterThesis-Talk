@@ -27,6 +27,12 @@
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{groupplots}
 \usepgfplotslibrary{dateplot}
+\usepgfplotslibrary{external}
+
+\tikzexternalize[mode=list and make]
+\tikzset{external/system call={pdflatex \tikzexternalcheckshellescape
+	-halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}
+}
 
 % Theme of the presentation
 \usetheme{CambridgeUS}
@@ -35,9 +41,6 @@
 
 % Declare this - symbol to import pgf files correctly
 \DeclareUnicodeCharacter{2212}{-}
-
-% Specify TopRule and Bottomrule Thickness for booktabs usepackage
-\renewcommand{\heavyrulewidth}{2pt}
 
 % Define colors of the university Freiburg hy their html value
 \definecolor{Uni-Fr-Red}{HTML}{C41330}
