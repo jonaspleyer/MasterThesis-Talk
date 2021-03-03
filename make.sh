@@ -1,4 +1,4 @@
 #!/bin/bash
 
-latexmk -pdf --output-directory=BuildFiles main.tex
-latexmk -pdf --output-directory=BuildFiles handout.tex
+latexmk -shell-escape -pdf --output-directory=BuildFiles main.tex &
+latexmk -shell-escape -pdf --output-directory=BuildFiles handout.tex
