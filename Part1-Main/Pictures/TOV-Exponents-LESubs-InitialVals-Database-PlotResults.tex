@@ -14,7 +14,7 @@ legend style={
 log basis y={10},
 tick align=outside,
 tick pos=left,
-title={\(\displaystyle \xi_0\) for fixed \(\displaystyle p_0\)\(\displaystyle =1\)},
+title={\(\displaystyle r_0\) for fixed \(\displaystyle p_0\)\(\displaystyle =1\)},
 x grid style={white!69.0196078431373!black},
 xlabel={\(\displaystyle n=\frac{1}{\gamma-1}\)},
 xmin=-0.2385, xmax=5.2285,
@@ -49,7 +49,7 @@ yticklabels={
   \(\displaystyle {10^{6}}\)
 }
 ]
-\addplot [semithick, black]
+\addplot [semithick, black, dashed]
 table {%
 0.01 6.95750000000015
 0.02 7.00749999999977
@@ -541,7 +541,7 @@ table {%
 4.88 972.500000000031
 };
 \addlegendentry{LE for A=0.1}
-\addplot [semithick, black, dashed]
+\addplot [semithick, black]
 table {%
 0.01 1.03249999999999
 0.02 1.04750000000001
@@ -851,7 +851,7 @@ table {%
 3.06 9762.00000001585
 };
 \addlegendentry{TOV with term=0 for A=0.1}
-\addplot [semithick, red]
+\addplot [semithick, red, dashed]
 table {%
 0.01 0.695000000000002
 0.02 0.700899999999876
@@ -1353,7 +1353,7 @@ table {%
 4.98 708.699999999901
 };
 \addlegendentry{LE for A=1}
-\addplot [semithick, red, dashed]
+\addplot [semithick, red]
 table {%
 0.01 0.299999999999999
 0.02 0.30344999999997
@@ -1725,7 +1725,7 @@ table {%
 3.68 9329.39999999702
 };
 \addlegendentry{TOV with term=0 for A=1}
-\addplot [semithick, green!50!black]
+\addplot [semithick, green!50!black, dashed]
 table {%
 0.01 0.085
 0.02 0.0876000000000041
@@ -2240,7 +2240,7 @@ table {%
 4.98 82.0199999999932
 };
 \addlegendentry{LE for A=8}
-\addplot [semithick, green!50!black, dashed]
+\addplot [semithick, green!50!black]
 table {%
 0.01 0.07
 0.02 0.0711500000000028
